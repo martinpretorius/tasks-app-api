@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 
 // get all tasks saved locally in tasks array
 router.get("/tasks", (req, res) => {
-    res.send(tasks)
+    res.send(tasks);
 });
 
 api.use("/api/", router);
