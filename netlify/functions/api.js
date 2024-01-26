@@ -15,12 +15,12 @@ const tasks = [
 ];
 
 // get all tasks saved locally in tasks array
-app.get("/tasks", (req, res) => {
+router.get("/tasks", (req, res) => {
     res.send(tasks)
 });
 
 // create task
-app.post("/tasks", (req, res) => { 
+router.post("/tasks", (req, res) => { 
     const { title } = req.body;
 
     if (!title) {
@@ -43,7 +43,7 @@ app.post("/tasks", (req, res) => {
 });
 
 // update task
-app.patch("/tasks/:id", (req, res) => {
+router.patch("/tasks/:id", (req, res) => {
     const { title } = req.body;
     const id = req.params.id;
     const task = tasks.find((task) => task.id === req.params.id);
@@ -70,7 +70,7 @@ app.patch("/tasks/:id", (req, res) => {
 })
 
 // delete task
-app.delete("/tasks/:id", (req, res) => {
+router.delete("/tasks/:id", (req, res) => {
     const id = req.params.id;
 
     if (!id) {
