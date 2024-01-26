@@ -7,10 +7,10 @@ const router = Router();
 // router.get("/hello", (req, res) => res.send("Hello World!"));
 
 // create array of tasks to be used as dummy task data
-const tasks = [
-    {id: nanoid(), title: "Create back end API for task App", completed: false},
-    {id: nanoid(), title: "Create UI for task App", completed: false}
-];
+// const tasks = [
+//     {id: nanoid(), title: "Create back end API for task App", completed: false},
+//     {id: nanoid(), title: "Create UI for task App", completed: false}
+// ];
 
 // create / route which runs as soon as app starts
 router.get("/", (req, res) => {
