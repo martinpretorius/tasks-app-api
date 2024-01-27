@@ -19,8 +19,10 @@ app.get("/", (request, response) => {
 
 // create array of tasks to be used as dummy task data
 const tasks = [
-    {id: nanoid(), title: "Create back end API for task App", completed: false},
-    {id: nanoid(), title: "Create UI for task App", completed: false}
+    {id: nanoid(), title: "Create Node.js/Express.js server app to serve tasks", completed: false, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Deploy Node.js/Express.js server app on render.com", completed: false, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Create UI app with ReactJS to render tasks", completed: false, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Deploy ReactJS app on netlify.com", completed: false, createdDate: Date.now(), editDate: Date.now()},
 ];
 
 // get all tasks saved locally in tasks array
@@ -39,9 +41,10 @@ app.post("/api/tasks", (req, res) => {
     try {
         const task = {
             id: nanoid(),
-            title: req.body.title,
-            content: req.body.content,
-            completed: false
+            title: req.body.title,          
+            completed: false,
+            createdDate: req.body.createdDate,
+            editDate: req.body.editDate
         };
 
         tasks.push(task);
@@ -72,6 +75,8 @@ app.patch("/api/tasks/:id", (req, res) => {
     try {
         task.title = title;          
         task.completed = req.body.completed;
+        task.createdDate = req.body.createdDate;
+        task.editDate = req.body.editDate;        
         res.json(task);
     } catch (error) {
         res.status(500).send("Oops, something went wrong");
