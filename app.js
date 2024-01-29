@@ -19,10 +19,10 @@ app.get("/", (request, response) => {
 
 // create array of tasks to be used as dummy task data
 const tasks = [
-    {id: nanoid(), title: "Create Node.js/Express.js server app to serve tasks", completed: false, createdDate: Date.now(), editDate: Date.now()},
-    {id: nanoid(), title: "Deploy Node.js/Express.js server app on render.com", completed: false, createdDate: Date.now(), editDate: Date.now()},
-    {id: nanoid(), title: "Create UI app with ReactJS to render tasks", completed: false, createdDate: Date.now(), editDate: Date.now()},
-    {id: nanoid(), title: "Deploy ReactJS app on netlify.com", completed: false, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Create Node.js/Express.js server app to serve tasks", completed: true, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Deploy Node.js/Express.js server app on render.com", completed: true, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Create UI app with ReactJS to render tasks", completed: true, createdDate: Date.now(), editDate: Date.now()},
+    {id: nanoid(), title: "Deploy ReactJS app on netlify.com", completed: true, createdDate: Date.now(), editDate: Date.now()},
 ];
 
 // get all tasks saved locally in tasks array
