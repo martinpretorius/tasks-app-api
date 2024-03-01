@@ -14,7 +14,7 @@ app.listen(PORT, () => {
 
 // create / route which runs as soon as app starts
 app.get("/", (request, response) => {
-    response.send("Welcome to my Task API server built with NodeJS and ExpressJS");
+    response.send("Welcome to my Task API server built with NodeJS and ExpressJS!");
 })
 
 // create array of tasks to be used as dummy task data
